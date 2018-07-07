@@ -1,0 +1,14 @@
+{
+  "name": "cracktv",
+  "version": "1.0.0",
+  "description": "short movies streaming app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "movies"
+  ],
+  "author": "kufre godwin",
+  "license": "ISC"
+}
