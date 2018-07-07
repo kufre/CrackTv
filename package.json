@@ -2,7 +2,11 @@
   "name": "cracktv",
   "version": "1.0.0",
   "description": "short movies streaming app",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kufre/CrackTv.git"
+  },
+  "main": "sever.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +14,19 @@
     "movies"
   ],
   "author": "kufre godwin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "3": "^2.1.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
+    "method-override": "^2.3.10",
+    "passport": "^0.4.0",
+    "popper.js": "^1.14.3"
+  }
 }
