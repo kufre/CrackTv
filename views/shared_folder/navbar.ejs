@@ -1,16 +1,61 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="/">Home</a>
-          <a class="p-2 text-dark" href="#">Enterprise</a>
-          <a class="p-2 text-dark" href="#">Support</a>
-          <a class="p-2 text-dark" href="#">Pricing</a>
-        </nav>
-        <a class="btn btn-outline-primary" href="/account/register">Sign up</a>
-        <a class="btn btn-outline-info" href="/account/Login">Login</a>
-      </div>
+<body>
+
+  <div class="super_container">
   
-      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Pricing</h1>
-        <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
-</div>
+    <!-- Header -->
+  
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="header_content d-flex flex-row align-items-center justify-content-start">
+              <div class="logo">
+                  <a href="/"><img src="../../images/foto1.png" alt="CrackTV" width="100px" height="100px">
+                    <span style="color:#000;margin-left:2.5%;font-size:30px;position:absolute;top: 30px;left: 90px;" class="tume cool">Oncrack<b style="color:red;">TV</b></span>
+                    
+                    
+                  </a>
+              </div>
+              <div class="search_container ml-auto">
+                <nav class="main_nav">
+                  <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/trailers">Trailers</a></li>
+                    <li><a href="/upcoming">Upcoming Movie</a></li>
+                    <li><a href="/cenima">Showing in Cenima</a></li>
+                    <li class="load_more_button text-center trans_200"><a href="/register">Sign Up</a></li>
+                    <li class="load_more_button text-center trans_200"><a href="/login">Login</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="hamburger ml-auto menu_mm">
+                <i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <!-- Menu -->
+  
+    <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+      <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+      <div class="logo menu_mm"><a href="#">Avision</a></div>
+      <div class="search">
+        <form action="#">
+          <input type="search" class="header_search_input menu_mm" required="required" placeholder="Type to Search...">
+          <img class="header_search_icon menu_mm" src="images/search_2.png" alt="">
+        </form>
+      </div>
+      <nav class="menu_nav">
+        <ul class="menu_mm">
+          <li class="menu_mm"><a href="index.html">home</a></li>
+          <li class="menu_mm"><a href="#">Fashion</a></li>
+          <li class="menu_mm"><a href="#">Gadgets</a></li>
+          <li class="menu_mm"><a href="#">Lifestyle</a></li>
+          <li class="menu_mm"><a href="#">Video</a></li>
+          <li class="menu_mm"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
