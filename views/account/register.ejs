@@ -14,19 +14,42 @@
 
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/regular.jpg" data-speed="0.8"></div>
-		<div class="home_content">
+		<div class="home_content" style="position: absolute;top: 20%;left: 0;width: 100%;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 offset-lg-3">
 						<!-- Post Comment -->
 						<div class="post_comment">
 							<div class="contact_form_container">
-								<form action="#">
-									<input type="text" class="contact_input contact_input_name" placeholder="Your Name" required="required">
-									<input type="email" class="contact_input contact_input_email" placeholder="Your Email" required="required">
-									<textarea class="contact_text" placeholder="Your Message" required="required"></textarea>
-									<button type="submit" class="contact_button">Send Message</button>
-								</form>
+									<form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+											<div class="form-group">
+												<label for="uname1">Username</label>
+												<input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
+												<div class="invalid-feedback">Oops, you missed this one.</div>
+											</div>
+											<div class="form-group">
+													<label for="uname1">Email</label>
+													<input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
+													<div class="invalid-feedback">Oops, you missed this one.</div>
+											</div>
+											<div class="form-group">
+												<label>Password</label>
+												<input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
+												<div class="invalid-feedback">Enter your password too!</div>
+											</div>
+											<div class="form-group">
+													<label>Confirm Password</label>
+													<input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
+													<div class="invalid-feedback">Enter your password too!</div>
+											</div>
+											
+											<div>
+												<label class="custom-control custom-checkbox">
+														<button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+												 </label>
+											</div>
+											
+										</form>
 							</div>
 						</div>
 					</div>
@@ -34,6 +57,7 @@
 			</div>		
 		</div>
 	</div>
+	
 <% include ../shared_folder/footer%>
 <script src="../../plugins/parallax-js-master/parallax.min.js"></script>
 <script src="../../js/contact.js"></script>

@@ -59,16 +59,16 @@ app.get('/reset_password',(req,res)=>{
 
 // Movies Route
 app.get('/trailers',(req,res)=>{
-    res.render('Movies/trailers',{title: 'Hello from render'});
+    res.render('movies/trailers',{title: 'Hello from render'});
 });
 app.get('/trailers/id',(req,res)=>{
-    res.render('Movies/trailer-detail',{title: 'Hello from render'});
+    res.render('movies/trailer-detail',{title: 'Hello from render'});
 });
-app.get('/Login',(req,res)=>{
-    res.render('account/login',{title: 'Hello from render'});
+app.get('/upcoming',(req,res)=>{
+    res.render('movies/upcoming-movie',{title: 'Hello from render'});
 });
-app.get('/reset_password',(req,res)=>{
-    res.render('account/password_reset',{title: 'Hello from render'});
+app.get('/cenima',(req,res)=>{
+    res.render('movies/cenima',{title: 'Hello from render'});
 });
 
 

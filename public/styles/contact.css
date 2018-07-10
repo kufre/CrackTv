@@ -941,3 +941,33 @@ section
 {
 	border-bottom: solid 1px rgba(255,255,255,1);
 }
+
+.main_nav ul li
+{
+	display: inline-block;
+}
+.main_nav ul li:not(:last-child)
+{
+	margin-right: 29px;
+}
+.load_more_button {
+    width: 118px;
+    height: 36px;
+    background: transparent;
+    border: solid 1px #d7d7d7;
+    border-radius: 18px;
+    margin: 0 auto;
+    line-height: 32px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.trans_200 {
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
