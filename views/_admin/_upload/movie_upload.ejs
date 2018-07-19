@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<% include ../../_shared_folder/_header %>
+<link rel="stylesheet" type="text/css" href="../../styles/category.css">
+<link rel="stylesheet" type="text/css" href="../../styles/category_responsive.css">
+<title>Up Coming Movies</title>
+</head>
+
+	<!-- Header -->
+	<% include ../../_shared_folder/_navbar %>
+
+<div class="home" style="background:#ededed;height: 60px;"></div>
+	<!-- Page Content -->
+  
+	<div class="page_content">
+		<div class="container">
+			<div class="row row-lg-eq-height">
+
+				<!-- Main Content -->
+
+				<div class="col-lg-12">
+					<div class="main_content">
+
+						<!-- Category -->
+
+						<div class="category">
+							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
+								<div class="section_title">Movie Upload Panel</div>
+								<div class="section_tags ml-auto">
+									<ul>
+										<li><a href="/admin/upload">Home</a></li>
+										<li class="active"><a href="/admin/movie_upload">Upload Movie</a></li>
+										<li><a href="/admin/movie_allocation">Allocate Movie</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="section_content">
+							
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+											  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add New Movie</a>
+											</li>
+											<li class="nav-item">
+											  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Movie List</a>
+											</li>
+										
+									</ul>
+										  <div class="tab-content" id="myTabContent">
+											<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+													<div class="col-lg-6 offset-lg-3">
+															<!-- Post Comment -->
+															<div class="post_comment">
+																<div class="contact_form_container">
+																		<form>
+																				<div class="form-row">
+																				<div class="form-group col-md-6">
+																						<label for="inputState">movie category</label>
+																						<select id="inputState" class="form-control">
+																							<option selected>Choose category</option>
+																							<option>...</option>
+																						</select>
+																						</div>
+																				  <div class="form-group col-md-6">
+																					<label for="inputPassword4">movie title</label>
+																					<input type="text" class="form-control" id="inputPassword4" placeholder="Move Title">
+																				  </div>
+																				</div>
+																				<div class="form-group">
+																						<label for="inputAddress">Movie Description</label>
+																						<textarea rows="4" class="form-control" id="inputAddress" placeholder="movie Description"></textarea>
+																				</div>
+																						<div class="form-group">
+																								<label for="inputAddress">producer name</label>
+																								<input type="text" class="form-control" id="inputEmail4" placeholder="producer name">
+																						</div>
+																								<div class="form-group">
+																										<label for="inputAddress">Movie tags</label>
+																										<input type="text" class="form-control" id="inputEmail4" placeholder="movie tags">
+																									 
+																								</div>
+																								<div class="form-group">
+																										<label for="inputAddress">Movie Casts</label>
+																										<textarea rows="4" class="form-control" id="inputAddress" placeholder="movie casts"></textarea>
+																								</div>
+																				
+																				
+																				<div class="form-row">
+																				<div class="form-group col-md-4">
+																						<label for="inputState">web pic</label>
+																						<select id="inputState" class="form-control">
+																							<option selected>Choose...</option>
+																							<option>...</option>
+																						</select>
+																						</div>
+																				  <div class="form-group col-md-4">
+																					<label for="inputState">mobile pic</label>
+																					<select id="inputState" class="form-control">
+																					  <option selected>Choose...</option>
+																					  <option>...</option>
+																					</select>
+																				  </div>
+																				  <div class="form-group col-md-4">
+																						<label for="inputState">upload Movie</label>
+																						<select id="inputState" class="form-control">
+																						  <option selected>Choose...</option>
+																						  <option>...</option>
+																						</select>
+																					  </div>
+																				</div>
+																				<button type="submit" class="btn btn-danger">Reset</button>
+																				<button type="submit" class="btn btn-secondary">Create</button>
+																			  </form>
+																</div>
+															</div>
+													</div>
+											</div>
+											<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+													<table class="table" style="    margin-top: 12px;">
+															<thead class="thead-dark">
+															  <tr>
+																<th scope="col">#</th>
+																<th scope="col">FullName</th>
+																<th scope="col">Email</th>
+																<th scope="col">Phone</th>
+																<th scope="col">Sex</th>
+																<th scope="col">Marital Status </th>
+																<th scope="col"> Status </th>
+																
+															  </tr>
+															</thead>
+															<tbody>
+															  <tr>
+																<th scope="row">1</th>
+																<td>Mark</td>
+																<td>Otto</td>
+																<td>@mdo</td>
+																<td>Mark</td>
+																<td>Otto</td>
+																<td>@mdo</td>
+															  </tr>
+															  <tr>
+																<th scope="row">2</th>
+																<td>Jacob</td>
+																<td>Thornton</td>
+																<td>@fat</td>
+																<td>Mark</td>
+																<td>Otto</td>
+																<td>@mdo</td>
+															  </tr>
+															  <tr>
+																<th scope="row">3</th>
+																<td>Larry</td>
+																<td>the Bird</td>
+																<td>@twitter</td>
+																<td>Mark</td>
+																<td>Otto</td>
+																<td>@mdo</td>
+															  </tr>
+															</tbody>
+														  </table>
+														  
+														  
+											</div>
+										
+									
+						
+						</div>
+					</div>
+						</div>
+
+					</div>
+					<div class="load_more"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <% include ../../_shared_folder/_footer%>
+    <script src="../../plugins/parallax-js-master/parallax.min.js"></script>
+   
+    </body>
+    </html>

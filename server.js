@@ -4,11 +4,22 @@ var path = require('path');
 
 
 var app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 7000;
+
+
+
+var router = require('./routes/main_route');
+
+var api = require('./routes/api_route');
+
+
+
 
 
 // set view engine 
 app.set('view engine', 'ejs');
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
 
 // Everything in public will be accessible from '/'
 app.use(express.static(path.join(__dirname, 'public')));
@@ -16,65 +27,38 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 
 
+// ADMIN ROUTE
 
-// basic navigation route
-app.get('/',(req,res)=>{
-    res.render('index',{title: 'Hello from render'});
-});
+app.use('/',router);
 
-app.get('/contact-us',(req,res)=>{
-    res.render('contact-us',{title: 'Hello from render'});
-});
-
-app.get('/about-us',(req,res)=>{
-    res.render('about-us',{title: 'Hello from render'});
-});
-
-app.get('/terms-of-use',(req,res)=>{
-    res.render('terms-of-use',{title: 'Hello from render'});
-});
-
-app.get('/faq',(req,res)=>{
-    res.render('faq',{title: 'Hello from render'});
-});
-
-app.get('/privacy-policy',(req,res)=>{
-    res.render('privacy-policy',{title: 'Hello from render'});
-});
+app.use('/api', api);
 
 
 
-// account Route
-app.get('/register',(req,res)=>{
-    res.render('account/register',{title: 'Hello from render'});
-});
-app.get('/Login',(req,res)=>{
-    res.render('account/login',{title: 'Hello from render'});
-});
-app.get('/reset_password',(req,res)=>{
-    res.render('account/password_reset',{title: 'Hello from render'});
-});
+
+app.use('/contact-us',router);
+app.use('/about-us',router);
+app.use('/terms-of-use',router);
+app.use('/faq',router);
+app.use('/privacy-policy',router);
 
 
+//account Route
+app.use('/register',router);
+app.use('/Login',router);
+app.use('/reset_password',router);
 
-// Movies Route
-app.get('/trailers',(req,res)=>{
-    res.render('movies/trailers',{title: 'Hello from render'});
-});
-app.get('/trailers/id',(req,res)=>{
-    res.render('movies/trailer-detail',{title: 'Hello from render'});
-});
-app.get('/upcoming',(req,res)=>{
-    res.render('movies/upcoming-movie',{title: 'Hello from render'});
-});
-app.get('/cenima',(req,res)=>{
-    res.render('movies/cenima',{title: 'Hello from render'});
-});
+// Movies Route 
+app.use('/trailers',router);
+app.use('/trailers/id',router);
+app.use('/upcoming',router);
+app.use('/cenima',router);
+
 
 
 
 
 
 app.listen(port, ()=>{
-    console.log("server started at port:"+port);
+    console.log("http://localhost:"+port);
 });

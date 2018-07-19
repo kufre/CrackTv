@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<% include shared_folder/header %>
+<% include _shared_folder/header %>
 <link rel="stylesheet" type="text/css" href="../../styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../../styles/responsive.css">
 <title>Home</title>
 </head>
 
 	<!-- Header -->
-	<% include shared_folder/navbar %>
+	<% include _shared_folder/navbar %>
 	
 	
 	<!-- Home -->
@@ -21,7 +21,7 @@
 				
 				<!-- Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(images/Mary-DTMB.jpg)"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -71,18 +71,16 @@
 									</div>
 								</div>
 
+									<!-- Similar Post -->
+								<div class="col-lg-3 col-md-6 similar_post_col">
+									<div class="similar_post trans_200">
+										<a href="post.html">Now Showing in Cenima</a>
+									</div>
+								</div>
+
 							</div>
 						</div>
 						
-						<div class="home_slider_next_container">
-							<div class="home_slider_next" style="background-image:url(images/home_slider_next.jpg)">
-								<div class="home_slider_next_background trans_400"></div>
-								<div class="home_slider_next_content trans_400">
-									<div class="home_slider_next_title">next</div>
-									<div class="home_slider_next_link">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
-								</div>
-							</div>
-						</div>
 
 					</div>
 				</div>
@@ -139,19 +137,15 @@
 									</div>
 								</div>
 
-							</div>
-						</div>
-						
-						<div class="home_slider_next_container">
-							<div class="home_slider_next" style="background-image:url(images/home_slider_next.jpg)">
-								<div class="home_slider_next_background trans_400"></div>
-								<div class="home_slider_next_content trans_400">
-									<div class="home_slider_next_title">next</div>
-									<div class="home_slider_next_link">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
-								</div>
-							</div>
-						</div>
+									<!-- Similar Post -->
+									<div class="col-lg-3 col-md-6 similar_post_col">
+										<div class="similar_post trans_200">
+											<a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most</a>
+										</div>
+									</div>
 
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -248,7 +242,7 @@
 		</div>
   </div>
   
-<% include shared_folder/footer%>
+<% include _shared_folder/footer%>
 <script src="../../plugins/masonry/images_loaded.js"></script>
 <script src="../../js/custom.js"></script>
 </body>
