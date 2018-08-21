@@ -6,14 +6,7 @@ const mysql = require('mysql2');
 // get the promise implementation, we will use bluebird
 const bluebird = require('bluebird');
  
-// create the connection, specify bluebird as Promise
-const con =  mysql.createConnection({
-  host:'localhost', 
-  user: 'root', 
-  password: '12345',
-  database: 'on_CrackTv', 
-  Promise: bluebird
-});
+
 
 
 
