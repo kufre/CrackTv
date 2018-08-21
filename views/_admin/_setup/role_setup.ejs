@@ -1,11 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+appModule
 <% include ../../_shared_folder/_header %>
 <link rel="stylesheet" type="text/css" href="../../styles/category.css">
 <link rel="stylesheet" type="text/css" href="../../styles/category_responsive.css">
-<title>Up Coming Movies</title>
+<title><%-title %></title>
 </head>
 
 	<!-- Header -->
@@ -30,78 +27,87 @@
 								<div class="section_title">Role Setup Panel</div>
 								<div class="section_tags ml-auto">
 									<ul>
-                                        <li><a href="/admin/setup">Home</a></li>
-                                        <li><a href="/admin/user_setup">Users Setup</a></li>
+										<li><a href="/admin/setup">Home</a></li>
+										<li><a href="/admin/user_setup">Users Setup</a></li>
 										<li class="active"><a href="/admin/role_setup">User Role Setup</a></li>
 										<li><a href="/admin/category_setup">Movie Category Setup</a></li>
 									</ul>
 								</div>
 							</div>
-							<div class="section_content">
-							
+							<div class="section_content" ng-controller="role_controller as role_ctr">
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 											<li class="nav-item">
 											  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add New User Role</a>
-											</li>
-											<li class="nav-item">
-											  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Role List</a>
 											</li>
 										
 									</ul>
 									<div class="tab-content" id="myTabContent">
 									<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-											<div class="col-lg-6 offset-lg-3">
-													<!-- Post Comment -->
+										<div class="div row">
+											<div class="col-lg-12">
+													<div ng-if="message">
+															<div class="alert {{alert_type}} alert-dismissible fade show" role="alert">
+																	<strong>{{type}}!</strong> {{displayMessage}}.
+																	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																	</button>
+															</div>
+													 </div>	
+													 <br>
+											</div>	 
+											<div class="col-lg-4">
 													<div class="post_comment">
 														<div class="contact_form_container">
-																<form>
-																	
+																<form ng-submit="add_role()" name="myForm" novalidate class="form-horizontal">
 																		<div class="form-group">
-																		  <label for="inputAddress">User Role</label>
-																		  <input type="text" class="form-control" id="inputAddress" placeholder="User Role">
+																				<label for="role_name">User Role</label>
+																				<input type="text" class="form-control" id="role_name" ng-model="role_ctr.role.role_name"  placeholder="User Role" required>
+																				<input type="hidden" name="_csrf"  id="_csrf" value="<%-csrfToken%>">
+																				<input type="hidden" ng-model="role_ctr.role.role_id">
 																		</div>
-																		<button type="submit" class="btn btn-danger">Reset</button>
-																		<button type="submit" class="btn btn-secondary">Create</button>
-																	  </form>
+																		<button type="submit" ng-show="show_add_btn" ng-disabled="myForm.$invalid"class="btn btn-primary">Add New <span ng-show="loading"><i class="fa fa-spinner fa-spin"></i></span> </button>
+																		<button type="button" class="btn btn-danger" ng-click="role_ctr.reset()">Reset </button>
+																		<button type="button" ng-show="show_updae_btn" class="btn btn-success" ng-click="update_role()">Update <span ng-show="loading"><i class="fa fa-spinner fa-spin"></i></span></button>
+															</form>
 														</div>
-													</div>
+												</div>
 											</div>
-									</div>
-									<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-											<table class="table" style="    margin-top: 12px;">
+											<div class="col-lg-8">
+												<table class="table" style=" margin-top: 12px;">
 													<thead class="thead-dark">
 													  <tr>
-														<th scope="col">#</th>
 														<th scope="col">Role Name</th>
 														<th scope="col"> Action </th>
-														
 													  </tr>
 													</thead>
 													<tbody>
-													  <tr>
-														<th scope="row">1</th>
-														<td>Mark</td>
-														<td>@mdo</td>
+														
+													  <tr ng-repeat="role in role_ctr.roles">
+																<td>{{ role.role_name }}</td> 
+																<td class="info">
+																		<!-- Single button -->
+																		<button class="btn btn-default" ng-click="edit_role(role.role_id)"><span class="fa fa-pencil"></span></button>
+																		<button class="btn btn-danger" ng-click="remove_role(role.role_id)"><span class="fa fa-trash"></span></button>
+																	</td>
 													  </tr>
-													  <tr>
-														<th scope="row">2</th>
-														<td>Jacob</td>
-														<td>@mdo</td>
-													  </tr>
-													  <tr>
-														<th scope="row">3</th>
-														<td>Larry</td>
-														<td>@mdo</td>
-													  </tr>
+													
+															
 													</tbody>
 												  </table>
 												  
-												  
+											
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+											</div>
+										</div>
+											
 									</div>
-								
-							
-				
 				</div>
 					</div>
 
@@ -115,6 +121,7 @@
 	</div>
     <% include ../../_shared_folder/_footer%>
     <script src="../../plugins/parallax-js-master/parallax.min.js"></script>
-   
+	<script src="../../../app/_role/role_ng_service.js"></script>
+	<script src="../../../app/_role/role_ng_controller.js"></script>
     </body>
     </html>

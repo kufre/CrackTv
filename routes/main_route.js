@@ -1,11 +1,13 @@
 var express = require('express');
+var csrf = require('csurf');
 var router = express.Router();
 
+var csrfProtection = csrf({ cookie: true });
 
 
 
 
-router.get('/',(req, res)=>{
+router.get('/',csrfProtection,(req, res)=>{
     res.render('index',{title: 'Hello from render'});
 });
 router.get('/contact-us',(req,res)=>{
@@ -73,16 +75,16 @@ router.get('/admin/setup',(req, res)=>{
     res.render('_admin/_setup/index',{title: 'Hello from render'});
 });
 
-router.get('/admin/user_setup',(req, res)=>{
-    res.render('_admin/_setup/user_setup',{title: 'Hello from render'});
+router.get('/admin/user_setup',csrfProtection,(req, res)=>{
+    res.render('_admin/_setup/user_setup',{title: 'user setup',csrfToken: req.csrfToken()});
 });
 
-router.get('/admin/role_setup',(req, res)=>{
-    res.render('_admin/_setup/role_setup',{title: 'Hello from render'});
+router.get('/admin/role_setup',csrfProtection,(req, res)=>{
+    res.render('_admin/_setup/role_setup',{title: 'role setup',csrfToken: req.csrfToken()});
 });
 
-router.get('/admin/category_setup',(req, res)=>{
-    res.render('_admin/_setup/category_setup',{title: 'Hello from render'});
+router.get('/admin/category_setup',csrfProtection,(req, res)=>{
+    res.render('_admin/_setup/category_setup',{title: 'Category Setup',csrfToken: req.csrfToken()});
 });
 
 

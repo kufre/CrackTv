@@ -15,15 +15,12 @@
 	<!-- Page Content -->
   
 	<div class="page_content">
-		<div class="container">
+		<div class="container" ng-controller="admin_user_controller as admin_ctr">
 			<div class="row row-lg-eq-height">
-
 				<!-- Main Content -->
-
 				<div class="col-lg-12">
 					<div class="main_content">
 						<!-- Category -->
-
 						<div class="category">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">User Setup Panel</div>
@@ -37,154 +34,167 @@
 								</div>
 							</div>
 							<div class="section_content">
-							
 										<ul class="nav nav-tabs" id="myTab" role="tablist">
 												<li class="nav-item">
-												  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add New User</a>
+												  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Users Setup</a>
 												</li>
-												<li class="nav-item">
-												  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">User List</a>
-												</li>
-											
 										</ul>
 											  <div class="tab-content" id="myTabContent">
 												<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-														<div class="col-lg-6 offset-lg-3">
-																<!-- Post Comment -->
-																<div class="post_comment">
-																	<div class="contact_form_container">
-																			<form>
-																					<div class="form-row">
-																					<div class="form-group col-md-6">
-																							<label for="inputState">Role</label>
-																							<select id="inputState" class="form-control">
-																								<option selected>Choose Role</option>
-																								<option>...</option>
-																							</select>
-																							</div>
-																					  <div class="form-group col-md-6">
-																						<label for="inputPassword4">First Name</label>
-																						<input type="text" class="form-control" id="inputPassword4" placeholder="First Name">
-																					  </div>
-																					</div>
-																					<div class="form-row">
-																							<div class="form-group col-md-6">
-																							  <label for="inputEmail4">Last Name</label>
-																							  <input type="text" class="form-control" id="inputEmail4" placeholder="Last Name">
-																							</div>
-																							<div class="form-group col-md-6">
-																							  <label for="inputPassword4">Other Name</label>
-																							  <input type="text" class="form-control" id="inputPassword4" placeholder="Other Name">
-																							</div>
-																						  </div>
-																						  <div class="form-row">
-																								<div class="form-group col-md-6">
-																								  <label for="inputEmail4">Email</label>
-																								  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-																								</div>
-																								<div class="form-group col-md-6">
-																								  <label for="inputPassword4">Phone No </label>
-																								  <input type="text" class="form-control" id="inputPassword4" placeholder="Phone No">
-																								</div>
-																							  </div>
-
-																					<div class="form-group">
-																					  <label for="inputAddress">Resident Address</label>
-																					  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-																					</div>
-																					
-																					<div class="form-row">
-																					<div class="form-group col-md-4">
-																							<label for="inputState">Gender</label>
-																							<select id="inputState" class="form-control">
-																								<option selected>Choose...</option>
-																								<option>...</option>
-																							</select>
-																							</div>
-																					  <div class="form-group col-md-4">
-																						<label for="inputState">Marital Status</label>
-																						<select id="inputState" class="form-control">
-																						  <option selected>Choose...</option>
-																						  <option>...</option>
-																						</select>
-																					  </div>
-																					  <div class="form-group col-md-4">
-																							<label for="inputState">Date of Birth</label>
-																							<select id="inputState" class="form-control">
-																							  <option selected>Choose...</option>
-																							  <option>...</option>
-																							</select>
-																						  </div>
-																					</div>
-																					<button type="submit" class="btn btn-danger">Reset</button>
-																					<button type="submit" class="btn btn-secondary">Create</button>
-																				  </form>
-																	</div>
-																</div>
-														</div>
+													<div class="col-lg-12">
+															<ul class="nav nav-pills" style="float: right;padding: 15px 0px;">
+																<li class="nav-item">
+																	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+																		Add New
+																	</button>
+																</li>
+															</ul>
+													</div>
+													<table class="table" style="    margin-top: 12px;">
+														<thead class="thead-dark">
+															<tr>
+															<th scope="col">#</th>
+															<th scope="col">FullName</th>
+															<th scope="col">Email</th>
+															<th scope="col">Phone</th>
+															<th scope="col">Sex</th>
+															<th scope="col">Marital Status </th>
+															<th scope="col"> Role </th>
+															<th	scope="col">Action</th>
+															
+															</tr>
+														</thead>
+														<tbody>
+															<tr ng-repeat="user in admin_users">
+															<th scope="row">{{user.Id}}</th>
+															<td>{{user.name}}</td>
+															<td>{{user.email}}</td>
+															<td>{{user.phone}}</td>
+															<td>{{user.sex}}</td>
+															<td>{{user.marital_status}}</td>
+															<td>{{user.role}}</td>
+															<td><button>edit</button>// <button>remove</button></td>
+															</tr>
+														</tbody>
+														</table>
 												</div>
-												<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-														<table class="table" style="    margin-top: 12px;">
-																<thead class="thead-dark">
-																  <tr>
-																	<th scope="col">#</th>
-																	<th scope="col">FullName</th>
-																	<th scope="col">Email</th>
-																	<th scope="col">Phone</th>
-																	<th scope="col">Sex</th>
-																	<th scope="col">Marital Status </th>
-																	<th scope="col"> Status </th>
-																	
-																  </tr>
-																</thead>
-																<tbody>
-																  <tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																  </tr>
-																  <tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																  </tr>
-																  <tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																  </tr>
-																</tbody>
-															  </table>
-															  
-															  
-												</div>
-											
-										
-							
 							</div>
 						</div>
-
-					</div>
+						</div>
 					<div class="load_more"></div>
 				</div>
 			</div>
 		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+						<form ng-submit="add_admin_user()" name="myForm" novalidate class="form-horizontal">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+							<div class="form-row">
+								<div class="col-lg-12">
+									<div ng-if="message">
+											<div class="alert {{alert_type}} alert-dismissible fade show" role="alert">
+													<strong>{{type}}!</strong> {{displayMessage}}.
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+											</div>
+									 </div>	
+									 <br>
+							</div>
+							</div>
+
+							<div class="form-row">
+							<div class="form-group col-md-6">
+									<label for="inputState">Role</label>
+									<select id="inputState" class="form-control" ng-model="user.role">
+										<option value="0">Choose Role</option>
+										<option ng-repeat="role in roles" value="{{role.role_id}}">{{role.role_name}}</option>
+									</select>
+									</div>
+								<div class="form-group col-md-6">
+								<label for="first_name">First Name</label>
+								<input type="text" class="form-control" id="first_name" ng-model="user.firstname" placeholder="First Name">
+								</div>
+							</div>
+							<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="last_name">Last Name</label>
+										<input type="text" class="form-control" id="last_name"  ng-model="user.lastname"  placeholder="Last Name">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="inputPassword4">Other Name</label>
+										<input type="text" class="form-control" id="inputPassword4" ng-model="user.othername" placeholder="Other Name">
+									</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="email">Email</label>
+									<input type="email" class="form-control" id="email" ng-model="user.email" placeholder="Email">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="phone">Phone No </label>
+									<input type="text" class="form-control" id="phone" ng-model="user.phone" placeholder="Phone No">
+								</div>
+								</div>
+	
+							<div class="form-group">
+								<label for="inputAddress">Resident Address</label>
+								<input type="text" class="form-control" id="address" ng-model="user.address" placeholder="1234 Main St">
+							</div>
+							
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="inputState">Marital Status</label>
+									<select id="status" class="form-control" ng-model="user.status">
+										<option selected>Choose...</option>
+										<option value="single">single</option>
+										<option value="married">married</option>
+										<option value="divorce">divorce</option>
+										<option value="widow">widow</option>
+									</select>
+								</div>
+								<div class="form-group col-md-4">
+										<label for="sex">Sex</label>
+										<select id="sex" class="form-control" ng-model="user.sex">
+											<option value="0">Choose...</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+								</div>
+								<div class="form-group col-md-4">
+								<div class="form-group" moment-picker="user.DOB" format="YYYY-MM-DD" min-view="month"  min-view="month"
+									max-view="month" today="true">
+									<label for="DOB">Date of Birth</label>
+								   <span class="input-group-addon">
+									   <i class="fa fa-calendar"></i>
+								   </span>
+								   <input class="form-control" placeholder="MM-DD-YYYY" ng-model="user.DOB">
+							  </div>
+							  </div>
+							</div>
+							<input type="hidden" name="_csrf"  id="_csrf" value="<%-csrfToken%>">
+							
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Create</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
     <% include ../../_shared_folder/_footer%>
-    <script src="../../plugins/parallax-js-master/parallax.min.js"></script>
-   
+	<script src="../../plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="../../../app/_admin_user/_user_admin_manager_ng_service.js"></script>
+	<script src="../../../app/_role/role_ng_service.js"></script>
+	<script src="../../../app/_admin_user/_user_admin_manager_ng_controller.js"></script>
     </body>
     </html>
